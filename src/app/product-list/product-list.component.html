@@ -1,0 +1,97 @@
+<h2>Create Attribute Collection</h2>
+<form #attrForm="ngForm" (ngSubmit)="saveAttr(attrForm)">
+  <div class="row">
+    <div class="col-xs-2">
+      <label>Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="attrModel.name"
+        #name="ngModel"
+        class="form-control"
+        placeholder="Name"
+      />
+    </div>
+    <div class="col-xs-2 form-group">
+      <label>Description</label>
+      <input
+        type="text"
+        name="description"
+        [(ngModel)]="attrModel.description"
+        #name="ngModel"
+        class="form-control"
+        placeholder="Description"
+      />
+    </div>
+    <div class="col-xs-2">
+      <label>Data Type</label>
+      <input
+        type="text"
+        class="form-control"
+        name="datatype"
+        [(ngModel)]="attrModel.datatype"
+        #name="ngModel"
+        placeholder="Data Type"
+      />
+    </div>
+    <div class="col-xs-2">
+      <label>Length</label>
+      <input
+        type="text"
+        name="length"
+        [(ngModel)]="attrModel.length"
+        #name="ngModel"
+        class="form-control"
+        placeholder="Length"
+      />
+    </div>
+    <div class="col-xs-2">
+      <label>Precision</label>
+      <input
+        type="text"
+        name="precision"
+        [(ngModel)]="attrModel.precision"
+        #name="ngModel"
+        class="form-control"
+        placeholder="Precision"
+      />
+    </div>
+    <div class="col-xs-2">
+      <label>&nbsp;</label>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+<!-- <label>Form Input</label>
+{{attrForm.value | json}}
+<br /><br /> -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data Type</th>
+      <th>Length</th>
+      <th>Precision</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attr of collection[0].attr">
+      <td>{{attr.name}}</td>
+      <td>{{attr.description}}</td>
+      <td>{{attr.datatype}}</td>
+      <td>{{attr.length}}</td>
+      <td>{{attr.precision}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align:right">
+  <button style="margin-right: 15px" class="btn btn-default">Cancel</button>
+  <button class="btn btn-primary">Save</button>
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
